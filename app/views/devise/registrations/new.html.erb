@@ -19,15 +19,17 @@
                 autofocus: true,
                 input_html: { autocomplete: "address" }%>
 
-    <%= f.input :district,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "district" }%>
+    <%= f.label :district, "Select District" %>
+    <%= f.select :district,
+                options_for_select(["Port Louis", "Pamplemousses", "Rivière du Rempart", "Flacq", "Grand Port", "Savanne", "Black River", "Plaines Wilhems", "Moka"]),
+                { include_blank: "Select District", required: true, autofocus: true },
+                class: "form-control" %>
 
     <%= f.input :email,
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "email" }%>
+
     <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
