@@ -1,0 +1,18 @@
+<h1>All equipments</h1>
+<div class="container">
+  <div class="row">
+    <% @equipments.each do |equipment| %>
+    <div class="col-sm-3 m-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"> <%= equipment.name %> </h5>
+          <p class="card-text"> <%= equipment.description %>  </p>
+          <p class="card-text"> <%= equipment.category_name %>  </p>
+          <i class="fa-solid fa-people-roof"> </i> <%= equipment.available %> </p>
+          <p><i class="fa-solid fa-euro-sign"></i> <%= equipment.price %> </p>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
